@@ -1,0 +1,6 @@
+*.dbf
+*.dll
+**/bin/
+**/obj/
+*.cache
+*.pdb
