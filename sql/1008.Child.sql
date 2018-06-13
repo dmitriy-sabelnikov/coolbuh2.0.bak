@@ -1,0 +1,82 @@
+--DECLARE @id integer, @m1 integer, @m2 integer, @m3 integer, @m4 integer, 
+--        @m5 integer, @m6 integer, @m7 integer, @m8 integer,
+--        @m9 integer, @m10 integer, @m11 integer, @m12 integer,
+--        @chld1 integer, @chld2 integer, @chld3 integer, @chld4 integer, 
+--        @chld5 integer, @chld6 integer, @chld7 integer, @chld8 integer, 
+--        @chld9 integer, @chld10 integer, @chld11 integer, @chld12 integer,
+--        @i integer;
+--
+--DECLARE cursor_child CURSOR FOR 
+--SELECT PersCard_Id,
+--       case when d1 > 0 then 1 else 0 end m1,
+--       case when d1 > 0 then d1 else 0 end chld1,
+--       case when d2 > 0 and (d2-d1) > 0 then 1 else 0 end m2,
+--       case when d2 > 0 and (d2-d1) > 0 then (d2-d1) else 0 end chld2,
+--       case when d3 > 0 and (d3-d2) > 0 then 1 else 0 end m3,
+--       case when d3 > 0 and (d3-d2) > 0 then (d3-d2) else 0 end chld3,
+--       case when d4 > 0 and (d4-d3) > 0 then 1 else 0 end m4,
+--       case when d4 > 0 and (d4-d3) > 0 then (d4-d3) else 0 end chld4,
+--       case when d5 > 0 and (d5-d4) > 0 then 1 else 0 end m5,
+--       case when d5 > 0 and (d5-d4) > 0 then (d5-d4) else 0 end chld5,
+--       case when d6 > 0 and (d6-d5) > 0 then 1 else 0 end m6,
+--       case when d6 > 0 and (d6-d5) > 0 then (d6-d5) else 0 end chld6,
+--       case when d7 > 0 and (d7-d6) > 0 then 1 else 0 end m7,
+--       case when d7 > 0 and (d7-d6) > 0 then (d7-d6) else 0 end chld7,
+--       case when d8 > 0 and (d8-d7) > 0 then 1 else 0 end m8,
+--       case when d8 > 0 and (d8-d7) > 0 then (d8-d7) else 0 end chld8,
+--       case when d9 > 0 and (d9-d8) > 0 then 1 else 0 end m9,
+--       case when d9 > 0 and (d9-d8) > 0 then (d9-d8) else 0 end chld9,
+--       case when d10 > 0 and (d10-d9) > 0 then 1 else 0 end m10,
+--       case when d10 > 0 and (d10-d9) > 0 then (d10-d9) else 0 end chld10,
+--       case when d11 > 0 and (d11-d10) > 0 then 1 else 0 end m11,
+--       case when d11 > 0 and (d11-d10) > 0 then (d11-d10) else 0 end chld11,
+--       case when d12 > 0 and (d12-d11) > 0 then 1 else 0 end m12,
+--       case when d12 > 0 and (d12-d11) > 0 then (d12-d11) else 0 end chld12
+--  FROM (
+--  SELECT PersCard.PersCard_Id, 
+--         cast(D1 as integer) d1, 
+--         cast(D2 as integer) d2, 
+--         cast(D3 as integer) d3, 
+--         cast(D4 as integer) d4, 
+--         cast(D5 as integer) d5, 
+--         cast(D6 as integer) d6, 
+--         cast(D7 as integer) d7, 
+--         cast(D8 as integer) d8, 
+--         cast(D9 as integer) d9, 
+--         cast(D10 as integer) d10, 
+--         cast(D11 as integer) d11, 
+--         cast(D12 as integer) d12
+--    FROM imp_LITS
+--	INNER JOIN PersCard on PersCard.PersCard_TIN = imp_LITS.A4
+--   WHERE coalesce(d1, 0) > 0 or
+--         coalesce(d2, 0) > 0 or
+--         coalesce(d3, 0) > 0 or
+--         coalesce(d4, 0) > 0 or
+--         coalesce(d5, 0) > 0 or
+--         coalesce(d6, 0) > 0 or
+--         coalesce(d7, 0) > 0 or
+--         coalesce(d8, 0) > 0 or 
+--         coalesce(d9, 0) > 0 or 
+--         coalesce(d10, 0) > 0 or
+--         coalesce(d11, 0) > 0 or 
+--         coalesce(d12, 0) > 0
+-- )T
+-- OPEN cursor_child;
+-- /*Выбираем первую строку*/
+--FETCH NEXT FROM cursor_child INTO @id, @m1, @chld1, @m2, @chld2, @m3, @chld3, @m4, @chld4,
+--  @m5, @chld5, @m6, @chld6, @m7, @chld7, @m8, @chld8, @m9, @chld9, @m10, @chld10, @m11, @chld11, @m12, @chld12;
+--/*Выполняем в цикле перебор строк*/
+--WHILE @@FETCH_STATUS = 0
+--BEGIN
+--  set @i =0;
+--  WHILE @i < @chld1
+--    BEGIN
+--    SET @i = @i + 1;
+--    END
+--/*Выбираем следующую строку*/
+--FETCH NEXT FROM cursor_child INTO @id, @m1, @chld1, @m2, @chld2, @m3, @chld3, @m4, @chld4,
+--  @m5, @chld5, @m6, @chld6, @m7, @chld7, @m8, @chld8, @m9, @chld9, @m10, @chld10, @m11, @chld11, @m12, @chld12;
+--END;
+--CLOSE cursor_child;
+--DEALLOCATE cursor_child;
+          

@@ -1,0 +1,17 @@
+--/****** Script Date: 19.03.2018 9:00:22 ******/
+--/*Вставка в таблицу Child*/
+--if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[spChildInsert]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+--	drop procedure [dbo].[spChildInsert];
+--GO
+--Create Procedure [dbo].[spChildInsert] 
+--	@inChild_PersCard_Id  int                       ,  --Ссылка на карточку работника
+--    @inChild_FName        nvarchar(35)	            ,  --Имя
+--    @inChild_MName        nvarchar(35)              ,  --Отчество
+--    @inChild_LName        nvarchar(35)	            ,  --Фамилия
+--    @inChild_DOB          Date	                       --Дата рождения(date of birth)
+--AS                            
+--BEGIN
+--    insert into Child (Child_PersCard_Id, Child_FName, Child_MName, Child_LName, Child_DOB) 
+--	 values (@inChild_PersCard_Id, @inChild_FName, @inChild_MName, @inChild_LName, @inChild_DOB 
+--	  );
+--END

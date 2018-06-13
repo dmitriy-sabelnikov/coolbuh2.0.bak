@@ -1,0 +1,11 @@
+E:\coolbuh2.0\coolbuh2.0\Entities\bin\Debug\Entities.dll.config
+E:\coolbuh2.0\coolbuh2.0\Entities\bin\Debug\Entities.dll
+E:\coolbuh2.0\coolbuh2.0\Entities\bin\Debug\Entities.pdb
+E:\coolbuh2.0\coolbuh2.0\Entities\obj\Debug\Entities.dll
+E:\coolbuh2.0\coolbuh2.0\Entities\obj\Debug\Entities.pdb
+D:\coolbuh2.0\coolbuh2.0\Entities\bin\Debug\Entities.dll.config
+D:\coolbuh2.0\coolbuh2.0\Entities\bin\Debug\Entities.dll
+D:\coolbuh2.0\coolbuh2.0\Entities\bin\Debug\Entities.pdb
+D:\coolbuh2.0\coolbuh2.0\Entities\obj\Debug\Entities.dll
+D:\coolbuh2.0\coolbuh2.0\Entities\obj\Debug\Entities.pdb
+D:\coolbuh2.0\coolbuh2.0\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache

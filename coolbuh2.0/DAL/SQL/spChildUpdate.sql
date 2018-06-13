@@ -1,0 +1,22 @@
+--/****** Script Date: 19.03.2018 9:00:22 ******/
+--/*Обновление таблицы Child*/
+--if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[spChildUpdate]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+--	drop procedure [dbo].[spChildUpdate];
+--GO
+--Create Procedure [dbo].[spChildUpdate]
+--    @inChild_Id           int                       , --id карточки
+--	@inChild_PersCard_Id  int                       , --Ссылка на карточку работника
+--    @inChild_FName        nvarchar(35)	            ,  --Имя
+--    @inChild_MName        nvarchar(35)              ,  --Отчество
+--    @inChild_LName        nvarchar(35)	            ,  --Фамилия
+--    @inChild_DOB          Date	                       --Дата рождения(date of birth)
+--AS                            
+--BEGIN
+--	UPDATE Child SET
+--	  Child_PersCard_Id     = @inChild_PersCard_Id,
+--	  Child_FName	        = @inChild_FName, 
+--	  Child_MName	        = @inChild_MName,   
+--	  Child_LName	        = @inChild_LName,   
+--	  Child_DOB             = @inChild_DOB
+--    WHERE Child_Id = @inChild_Id;
+--END

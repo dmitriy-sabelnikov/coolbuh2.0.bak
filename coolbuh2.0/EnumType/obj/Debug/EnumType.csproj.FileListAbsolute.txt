@@ -1,0 +1,9 @@
+D:\coolbuh2.0\coolbuh2.0\EnumType\bin\Debug\EnumType.dll
+D:\coolbuh2.0\coolbuh2.0\EnumType\bin\Debug\EnumType.pdb
+D:\coolbuh2.0\coolbuh2.0\EnumType\obj\Debug\EnumType.dll
+D:\coolbuh2.0\coolbuh2.0\EnumType\obj\Debug\EnumType.pdb
+D:\coolbuh2.0\coolbuh2.0\EnumType\obj\Debug\EnumType.csprojResolveAssemblyReference.cache
+E:\coolbuh2.0\coolbuh2.0\EnumType\bin\Debug\EnumType.dll
+E:\coolbuh2.0\coolbuh2.0\EnumType\bin\Debug\EnumType.pdb
+E:\coolbuh2.0\coolbuh2.0\EnumType\obj\Debug\EnumType.dll
+E:\coolbuh2.0\coolbuh2.0\EnumType\obj\Debug\EnumType.pdb

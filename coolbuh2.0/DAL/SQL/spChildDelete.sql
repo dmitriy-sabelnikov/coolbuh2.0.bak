@@ -1,0 +1,13 @@
+--/****** Script Date: 19.03.2018 9:00:22 ******/
+--/*Удаление строки из таблицы Child*/
+--if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[spChildDelete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+--  drop procedure [dbo].[spChildDelete];
+--GO
+--Create Procedure [dbo].[spChildDelete]
+--	@inChild_Id   int           --id ребенка  
+--AS                            
+--BEGIN
+--	DELETE 
+--	  FROM Child
+--	 WHERE Child_Id = @inChild_Id;
+--END
